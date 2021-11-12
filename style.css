@@ -1,0 +1,789 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    outline: none;
+    text-decoration: none;
+    outline: none;
+    font-family: inherit;
+    font-weight: 400;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--light-background-color);
+    margin: 0;
+}
+
+ol,
+ul,
+li {
+    list-style: none;
+    display: block;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a img {
+    border: none;
+}
+
+button,
+a {
+    cursor: pointer;
+    color: inherit;
+}
+
+textarea {
+    resize: none;
+}
+
+button,
+input,
+textarea,
+select {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    border-radius: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+/* Reset end */
+html{scroll-behavior:smooth}
+/* COLOR PICKER START */
+
+ :root {
+    --dark-brown: #C36A2D;
+    --dark-header-color: 483434#;
+    --light-text-color: #EADCA6;
+    --light-background-color: #C1AC95;
+    --not-in-use-1: #E2C275;
+    --not-in-use-2: #FBFBFB;
+}
+/* COLOR PICKER END */
+/* Kovacspet Top menü begin*/
+
+.menuTop {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /*overflow: hidden;*/
+    background-color: #C36A2D;
+    z-index: 1;
+}
+
+img.home {
+    height: 80px;
+    vertical-align: middle;
+    float: right;
+
+}
+
+.menuTop a {
+    float: left;
+    display: block;
+    color: #EADCA6;
+    text-align: center;
+    padding: 36px 16px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.active {
+    background-color: #EADCA6;
+    color: white;
+}
+
+.menuTop .icon {
+    display: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+.dropdown .btnDrop {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: #EADCA6;
+    padding: 36px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.contentDrop {
+    display: none;
+    position: absolute;
+    background-color: #C36A2D;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.contentDrop a {
+    float: none;
+    color: #EADCA6;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+.menuTop a:hover {
+    background-color: #EADCA6;
+    color: #483434;
+}
+
+.dropdown:hover .btnDrop {
+    background-color: #EADCA6;
+    color: #483434;
+}
+
+.contentDrop a:hover {
+    background-color: #EADCA6;
+    color: #483434;
+}
+
+.dropdown:hover .contentDrop {
+    display: block;
+}
+
+@media screen and (max-width: 850px) {
+    .menuTop a:not(:first-child) {
+        display: none;
+        width: 150px;
+    }
+    .dropdown .btnDrop {
+        display: none;
+    }
+    .dropdown {
+        float: none;
+        width: 150px;
+    }
+    .menuTop a.icon {
+        float: right;
+        display: block;
+    }
+    .menuTop.responsive {
+        position: fixed;
+    }
+    .menuTop.responsive .icon {
+        position: absolute;
+        right: 124px;
+        top: 0;
+        padding: 36px 16px;
+        font-size: 16px;
+        text-align: center;
+    }
+    .menuTop.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+        font-size: 11px;
+        padding: 18px 8px;
+    }
+    .menuTop.responsive .contentDrop {
+        position: relative;
+    }
+    .menuTop.responsive .dropdown .btnDrop {
+        display: block;
+        width: 100%;
+        text-align: left;
+        font-size: 11px;
+        padding: 18px 8px;
+    }
+    menuTop.responsive img {
+        padding-left: 0;
+    }
+}
+/*Kovacspet Topmenmu end */
+/* Carousel start */
+
+#carousel {
+    position: relative;
+}
+
+.slideshow-container {
+    display: block;
+    width: 100vw;
+    text-align: center;
+    overflow: hidden;
+    transition: height 500ms linear;
+    max-height: calc(100vh - 91px);
+    margin-top: 92px;
+}
+
+.mySlides {
+    display: none;
+}
+
+.slideImg {
+    width: 100%;
+}
+
+.carousel-card {
+    display: block;
+    position: absolute;
+    bottom: 25px;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#carousel-button {
+    margin-bottom: 20px !important;
+    background-color: var(--dark-brown) !important;
+    color: var(--light-text-color) !important;
+}
+
+#carousel-button:hover {
+    background-color: transparent !important;
+    color: var(--dark-brown) !important;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: -3vh 2px 2vh;
+    background-color: var(--light-text-color);
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 0.3s linear, background-color 0.6s ease;
+}
+
+.dot:hover {
+    transform: scale(1.3);
+}
+
+.active {
+    background-color: var(--dark-brown);
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 2s;
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@media (max-width: 480px) {
+    .slideshow-container {
+        min-width: 320px;
+    }
+    .carousel-card {
+        min-width: 320px;
+    }
+}
+/* Carousel end */
+/* EPIC DATA START */
+/* SECTION START --> */
+
+body {
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.sectionClass {
+    width: 95%;
+    margin: 5vh auto;
+    min-width: 320px;
+    text-align: center;
+    color: var(--dark-brown);
+    padding: 3vh 1vh;
+    border: 0.7vh solid var(--dark-brown);
+    border-radius: 7vh;
+}
+
+.sectionClass h1 {
+    margin: 20px auto 10px;
+    letter-spacing: 2px;
+    font-family: 'Anton', sans-serif;
+    color: #483434;
+    font-size: 3.5rem;
+    font-weight: 900;
+}
+
+.sectionClass p {
+    font-size: 20px;
+    margin: 0 5vw;
+}
+
+.sectionClass button,
+#search-button,
+#carousel-button {
+    display: block;
+    width: 80%;
+    padding: 1vh;
+    margin: 5vh auto 1vh;
+    border: 0.7vh solid var(--dark-brown);
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: var(--light-background-color);
+    color: var(--dark-brown);
+    cursor: pointer;
+}
+
+#paypal a {
+    width: 100%;
+    font-weight: bold;
+}
+
+.sectionClass button:hover,
+#search-button:hover {
+    background-color: var(--dark-brown);
+    color: var(--light-background-color);
+    /*opacity:0.5;*/
+}
+
+.sectionClass i {
+    margin: 0 20px;
+}
+/* <-- SECTION */
+/* ABOUT US --> */
+
+.sectionClass#aboutUs {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px;
+    margin-top: 50px;
+}
+
+.sectionClass#helpUs {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    align-items: center;
+    justify-content: center;
+}
+
+.sectionClass .sectionText,
+.sectionClass .sectionImg {
+    flex: 45%;
+}
+
+.sectionClass .sectionImg img {
+    margin: 3vh 0;
+    width: 60%;
+    border-radius: 50%;
+    border: 0.4rem solid var(--dark-brown);
+}
+/* FOGADJ ÖRÖKBE --> */
+
+.sectionClass#adopt {
+    margin-top: 0;
+    padding-top: 100px;
+}
+
+.how-many-dog {
+    font-size: 1rem;
+    margin: 20px auto 0;
+    font-weight: bold;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+}
+
+.sectionClass#adopt .show {
+    flex: 60%;
+    display: flex;
+    position: relative;
+}
+
+.show-card {
+    border: 4px solid var(--dark-brown);
+    border-radius: 10px;
+    margin: 0 2%;
+    background-color: var(--dark-brown);
+    color: var(--light-background-color);
+    font-weight: bold !important;
+}
+
+.show-card img {
+    max-width: 100%;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.show-card p {
+    font-weight: bold;
+    font-size: 1.5rem;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+}
+
+.show {
+    width: 100%;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.show i {
+    width: 10%;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.search {
+    flex: 35%;
+}
+
+.sectionClass#adopt form {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+}
+
+.sectionClass#adopt form p {
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 30px 0;
+}
+
+.sectionClass#adopt form .form-control {
+    font-size: 1.2rem;
+    flex: 20%;
+    line-height: 1;
+}
+
+.crit-checkbox {
+    display: flex;
+    max-width: 30%;
+    margin: 2%;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: flex-start;
+}
+
+.form-control label {
+    font-weight: normal;
+    display: inline;
+    width: 50%;
+    font-size: 1.5rem;
+}
+
+input[type="checkbox"] {
+    position: relative;
+    top: 15%;
+    left: -20%;
+    font: inherit;
+    color: var(--dark-brown);
+    min-width: 1.5em;
+    min-height: 1.5em;
+    border: 0.15em solid var(--dark-brown);
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+}
+
+input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--dark-brown);
+    /* Windows High Contrast Mode */
+    background-color: CanvasText;
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+/* <-- FOGADJ ÖRÖKBE */
+/* SIKER STORYK --> */
+
+.story {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    align-items: center;
+    justify-content: center;
+}
+#stories{
+    padding-top: 100px;
+    margin-top: 0px;
+}
+.sectionClass .quote {
+    font-size: 1rem;
+}
+
+.img-container,
+.quote-container {
+    flex: 23%;
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+.img-container img {
+    margin: 0 0;
+    position: relative;
+    max-height: 60%;
+    max-width: 60%;
+    border-radius: 50%;
+    border: 0.4rem solid var(--dark-brown);
+}
+
+.quote-container .quote {
+    padding-top: 0.5rem;
+    margin: 0 1vw;
+}
+
+.quote-container .author {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-top: 1vh;
+}
+/* <-- STORYK */
+/* MEDIA QUERY --> */
+
+@media (max-width: 1200px) {
+    .sectionClass {
+        width: 90%;
+    }
+    .sectionClass#stories .story {
+        flex-direction: row;
+    }
+    .img-container,
+    .quote-container {
+        flex: 45%;
+    }
+    .sectionClass#aboutUs {
+        flex: 95%;
+        flex-direction: column;
+    }
+    .sectionClass#helpUs {
+        flex: 95%;
+        flex-direction: column-reverse;
+    }
+    .flex-container {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .show-card p {
+        font-size: 1.2rem;
+    }
+    .crit-checkbox {
+        margin-left: 15%;
+    }
+    .form-control {
+        font-size: 1.1rem;
+    }
+    .form-control label {
+        font-size: 1.4rem;
+    }
+    input[type='checkbox'] {
+        min-width: 1.4em;
+        min-height: 1.4em;
+    }
+}
+
+@media (max-width: 768px) {
+    .sectionClass {
+        width: 90%;
+    }
+    input[type="checkbox"] {
+        margin-left: 10px;
+    }
+    .img-container,
+    .quote-container {
+        flex: 100%;
+    }
+    .img-container img {
+        display: none;
+    }
+    .crit-checkbox {
+        margin-left: 5%;
+    }
+    .show-card p {
+        font-size: 1rem;
+    }
+    .form-control label {
+        font-size: 1.2rem;
+    }
+    input[type='checkbox'] {
+        min-width: 1.2em;
+        min-height: 1.2em;
+    }
+}
+
+@media (max-width: 576px) {
+    .sectionClass {
+        width: 95%;
+        border: 2px solid var(--dark-brown);
+    }
+    .sectionClass h1 {
+        font-size: 1.8rem;
+    }
+    .sectionClass p {
+        font-size: 1rem;
+    }
+    .sectionClass button {
+        padding: 1rem 0.5rem;
+        font-size: 1.3rem;
+    }
+    .show-card p {
+        font-size: 0.8rem;
+    }
+    .form-control label {
+        font-size: 1rem;
+    }
+    input[type='checkbox'] {
+        min-width: 1.2em;
+        min-height: 1.2em;
+    }
+    .card-2 {
+        display: none;
+    }
+}
+/* <-- MEDIA QUERY */
+/* EPIC DATA END */
+/* Footer start by Kubi */
+
+footer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: .1rem 0 .1rem;
+    border-top-left-radius: .5rem;
+    border-top-right-radius: .5rem;
+    background-color: #C36A2D;
+    color: #EADCA6;
+    text-align: center;
+}
+
+footer>div {
+    width: 24%;
+}
+
+footer iframe {
+    width: 100%;
+}
+
+footer h2 {
+    padding-top: .1rem;
+    font-family: 'Anton', sans-serif;
+    font-size: 1.2rem;
+}
+
+footer p {
+    text-transform: uppercase;
+    font-size: .9rem;
+}
+
+.footerConnect {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+@media only screen and (max-width: 992px) {
+    footer {
+        flex-wrap: wrap;
+        padding: .1rem 0 .1rem;
+    }
+    .flexItem {
+        padding-top: .1rem;
+    }
+    .firstFlexItem {
+        width: 48%;
+    }
+    .secondFlexItem {
+        order: 2;
+        width: 48%;
+    }
+    .thirdFlexItem {
+        order: 1;
+        width: 48%;
+    }
+    .fourthFlexItem {
+        width: 48%;
+    }
+    .footerConnect {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    footer {
+        flex-direction: column;
+        padding: .1rem 0 .1rem;
+        min-width: 320px;
+    }
+    .flexItem {
+        width: 98%;
+        padding-top: .1rem;
+    }
+    .thirdFlexItem {
+        order: 3;
+    }
+    .secondFlexItem {
+        order: 2;
+    }
+    .firstFlexItem {
+        order: 1;
+    }
+    .footerConnect {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+}
+/* Footer end by Kubi */
